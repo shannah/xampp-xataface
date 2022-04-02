@@ -2,6 +2,14 @@
 
 This project includes a development environment for Xataface applications that uses PHP, Apache, and MySQL from a local XAMPP installation.
 
+== Requirements
+
+1. Mac OS Mojave (10.14) or higher.
+2. https://www.apachefriends.org/download.html[XAMPP] (Not XAMPP VM.  Must be the XAMPP that installs directly onto local machine, in the /Applications/XAMPP directory).
+
+NOTE: This dev environment is for Mac only.  For Windows and Linux, you should use the https://github.com/shannah/docker-compose-xataface[Docker environment].
+
+
 == Installation Instructions
 
 1. Copy the `sample.env` file to `.env`
