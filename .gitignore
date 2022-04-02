@@ -1,7 +1,10 @@
 .idea
-data/*
-log/*
-tmp/*
+/data/*
+!/data/.gitkeep
+/log/*
+!/log/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
 /.env
 !/bin/.env
 /www
