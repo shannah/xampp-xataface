@@ -5,7 +5,7 @@ status=`bash $SCRIPTPATH/mysql.server.sh status`
 if [[ $status == *"ERROR!"* ]]; then
     $SCRIPTPATH/mysql.server.sh start || (echo "Failed to start mysql" && exit 1)
     function finish() {
-        $SCRIPTPATH/mysql.server stop
+        $SCRIPTPATH/mysql.server.sh stop
     }
     trap finish EXIT
 fi
