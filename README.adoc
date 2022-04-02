@@ -1,0 +1,79 @@
+= Xataface XAMPP Development Environment
+
+This project includes a development environment for Xataface applications that uses PHP, Apache, and MySQL from a local XAMPP installation.
+
+== Installation Instructions
+
+1. Copy the `sample.env` file to `.env`
+2. Modify environment variables as desired in the .env file.
+3. Run `bash configure.sh`
+
+This will install a starter Xataface application in the _www_ directory.
+
+To test it out, you can start the server by running
+
+[source,listing]
+----
+bin/start
+----
+
+Then open the application in your web browser at http://localhost:9091
+
+You can access PHPMyAdmin at http://localhost:9091/phpmyadmin
+
+The port is set using the `XFServerPort` environment variable which can be set in `.env`
+
+== Usage Instructions
+
+[#start]
+=== Starting the Development Server
+
+[source,bash]
+----
+bin/start
+----
+
+[#stop]
+=== Stopping the Development Server
+
+[source,bash]
+----
+bin/stop
+----
+
+[#status]
+=== Show Status of All Xataface Development Servers
+
+[source,bash]
+----
+bin/xataface service
+----
+
+.Example Output
+[source,listing]
+----
+   mysql |    httpd |   port | path
+ STOPPED |  STOPPED |   9090 | /Users/shannah/.xataface/tmp/test/testapp
+ RUNNING |  RUNNING |   9090 | /Users/shannah/cn1_files/spokenpage/narrated_news
+ STOPPED |  STOPPED |   9090 | /Users/shannah/tmp/xftest
+----
+
+[#open]
+=== Open Application
+
+. <<start,Start>> the development server.
+. Open your browser to http://localhost:PORT where PORT is the value of the XFServerPort environment variable, which is set in the `.env` file.
+
+[#phpmyadmin]
+=== Open PHP MyAdmin
+
+. <<start,Start>> the development server.
+. Open your browser to http://localhost:PORT/phpmyadmin where PORT is theport number listed when you run the <<status,`xataface service`>> command.  Default port is 9090.
+
+[#port]
+=== Change Server Port
+
+1. Stop the server.  E.g. `bin/stop`
+2. Change the value of the XFServerPort environment variable in the `.env` file to the port you want Apache to run on.
+3. Start the server.  E.g. `bin/start`
+
