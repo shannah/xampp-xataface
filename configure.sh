@@ -58,7 +58,7 @@ if [[ $status == *"ERROR!"* ]]; then
     bash $SCRIPTPATH/bin/mysql.server.sh start || (echo "Failed to start mysql" && exit 1)
     function finish() {
         echo "bash $SCRIPTPATH/bin/mysql.server stop"
-        bash $SCRIPTPATH/bin/mysql.server stop
+        bash $SCRIPTPATH/bin/mysql.server.sh stop
     }
     trap finish EXIT
 else
