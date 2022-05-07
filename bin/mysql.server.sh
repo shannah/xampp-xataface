@@ -1,43 +1,7 @@
 #!/bin/sh
-# Copyright Abandoned 1996 TCX DataKonsult AB & Monty Program KB & Detron HB
-# This file is public domain and comes with NO WARRANTY of any kind
 
 # MariaDB daemon start/stop script.
 
-# Usually this is put in /etc/init.d (at least on machines SYSV R4 based
-# systems) and linked to /etc/rc3.d/S99mysql and /etc/rc0.d/K01mysql.
-# When this is done the mysql server will be started when the machine is
-# started and shut down when the systems goes down.
-
-# Comments to support chkconfig on RedHat Linux
-# chkconfig: 2345 64 36
-# description: A very fast and reliable SQL database engine.
-
-# Comments to support LSB init script conventions
-### BEGIN INIT INFO
-# Provides: mysql
-# Required-Start: $local_fs $network $remote_fs
-# Should-Start: ypbind nscd ldap ntpd xntpd
-# Required-Stop: $local_fs $network $remote_fs
-# Default-Start:  2 3 4 5
-# Default-Stop: 0 1 6
-# Short-Description: start and stop MariaDB
-# Description: MariaDB is a very fast and reliable SQL database engine.
-### END INIT INFO
-
-# have to do one of the following things for this script to work:
-#
-# - Run this script from within the MariaDB installation directory
-# - Create a /etc/my.cnf file with the following information:
-#   [mysqld]
-#   basedir=<path-to-mysql-installation-directory>
-# - Add the above to any other configuration file (for example ~/.my.ini)
-#   and copy my_print_defaults to /usr/bin
-# - Add the path to the mysql-installation-directory to the basedir variable
-#   below.
-#
-# If you want to affect other MariaDB variables, you should make your changes
-# in the /etc/my.cnf, ~/.my.cnf or other MariaDB configuration files.
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 source "$SCRIPTPATH/.env"
 if test -z ${XATAFACE}; then
