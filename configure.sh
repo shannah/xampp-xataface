@@ -30,10 +30,12 @@ fi
 
 # Now install PHPMyAdmin
 if [ ! -d "$SCRIPTPATH/lib/phpmyadmin" ]; then
+  echo "Downloading phpmyadmin..."
   curl -L https://github.com/shannah/phpmyadmin/archive/master.zip > "$SCRIPTPATH/lib/phpmyadmin-master.zip"
   currdir=$(pwd)
   cd "$SCRIPTPATH"/lib
-  unzip phpmyadmin-master.zip
+  echo "Extracting phpmyadmin..."
+  unzip -q phpmyadmin-master.zip
   mv phpmyadmin-master phpmyadmin
   rm phpmyadmin-master.zip
   cd "$currdir"
