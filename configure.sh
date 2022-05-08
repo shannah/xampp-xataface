@@ -42,8 +42,10 @@ if [ ! -d "$SCRIPTPATH/lib/phpmyadmin" ]; then
 fi
 
 
-echo "Creating www/conf.db.ini.php"
-cat << EOF > $SCRIPTPATH/www/conf.db.ini.php
+
+XATAFACE_APP_ROOT=${XATAFACE_APP_ROOT:-"."}
+echo "Creating www/$XATAFACE_APP_ROOT/conf.db.ini.php"
+cat << EOF > "$SCRIPTPATH/www/$XATAFACE_APP_ROOT/conf.db.ini.php"
 ;<?php exit;
 [_database]
     host = "localhost"
