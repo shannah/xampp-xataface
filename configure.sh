@@ -41,7 +41,10 @@ if [ ! -d "$SCRIPTPATH/lib/phpmyadmin" ]; then
   cd "$currdir"
 fi
 
-
+echo "Configuring environment..."
+if [ -f "$SCRIPTPATH/www/configure.env" ]; then
+    source "$SCRIPTPATH/www/configure.env"
+fi
 
 XATAFACE_APP_ROOT=${XATAFACE_APP_ROOT:-"."}
 echo "Creating www/$XATAFACE_APP_ROOT/conf.db.ini.php"
